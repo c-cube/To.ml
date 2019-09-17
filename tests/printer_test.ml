@@ -53,9 +53,9 @@ let suite =
       "negative round float" >::
         test_float "-1.0" (-1.) ;
       "date (1)" >::
-        (test_date "1979-05-27T07:32:00+00:00" 296638320.) ;
+        (test_date "1979-05-27T07:32:00Z" 296638320.) ;
       "date (2)" >::
-        (test_date "1970-01-01T00:00:00+00:00" 0.) ;
+        (test_date "1970-01-01T00:00:00Z" 0.) ;
 
       "empty int array" >::
         test_int_array "[]" [] ;
@@ -76,8 +76,8 @@ let suite =
       "empty date array" >::
         test_date_array "[]" [] ;
       "date array" >::
-        (test_date_array "[1979-05-27T07:32:00+00:00, \
-                          1979-05-27T08:38:40+00:00]"
+        (test_date_array "[1979-05-27T07:32:00Z, \
+                          1979-05-27T08:38:40Z]"
                          [ 296638320.; 296642320.]) ;
 
       "table" >::
